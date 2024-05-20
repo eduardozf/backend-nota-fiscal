@@ -26,7 +26,7 @@ class ProcessAsyncOperation implements ShouldQueue
 
     public function handle()
     {
-        $BASE_URL = 'http://localhost:3334';
+        $BASE_URL = 'http://13.37.0.20:3334';
         $endpoint = $BASE_URL . '/valida';
 
         $response = Http::post($endpoint, ['cnpj' => $this->validatedData['cnpj']]);
