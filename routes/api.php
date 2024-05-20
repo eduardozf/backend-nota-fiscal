@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NFEController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('nota-fiscal')->group(function () {
-    Route::get('/{key}', function ($key) {
-        echo('Pesquisando chave:'.$key);
-        return;
-    });
-    Route::post('/', function () {
-        echo('p');
-        return;
-    });
+    Route::get('/{chave}', [NFEController::class, 'read']);
+
+    Route::post('/', [NFEController::class, 'create']);
 });
